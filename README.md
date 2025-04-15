@@ -1,60 +1,60 @@
-# NICKET - Sistem Pendaftaran Event
+# NICKET - Modern Event Registration System
 
-Sistem pendaftaran event modern berbasis web yang dibangun dengan Laravel 12, Filament Admin Panel, dan Tailwind CSS dengan desain minimalis hitam-putih.
+A modern web-based event registration system built with Laravel 12, Filament Admin Panel, and Tailwind CSS featuring a minimalist black and white design.
 
-## Deskripsi Sistem
+## System Description
 
-NICKET adalah platform pendaftaran event yang memungkinkan pengguna untuk melihat daftar event, melihat detail event, dan mendaftar untuk event yang diminati. Platform ini dilengkapi dengan panel admin yang kuat untuk mengelola event dan pendaftaran peserta.
+NICKET is an event registration platform that allows users to view event listings, see event details, and register for events they're interested in. The platform comes with a powerful admin panel to manage events and participant registrations.
 
-## Fitur Utama
+## Key Features
 
 ### Frontend (User)
-- **Halaman Utama**: Menampilkan daftar event yang tersedia
-- **Halaman Detail Event**: Informasi lengkap tentang event
-- **Form Pendaftaran**: Pendaftaran peserta untuk event tertentu
-- **Tampilan Responsif**: Dapat diakses dari perangkat desktop maupun mobile
+- **Home Page**: Displays a list of available events
+- **Event Detail Page**: Provides comprehensive information about events
+- **Registration Form**: Allows participants to register for specific events
+- **Responsive Design**: Accessible from both desktop and mobile devices
 
 ### Backend (Admin)
-- **Panel Admin**: Panel admin dengan Filament untuk mengelola sistem
-- **Pengelolaan Event**: Membuat, mengedit, dan menghapus event
-- **Pengelolaan Gambar Terpisah**: Fitur khusus untuk mengelola gambar event
-- **Pengelolaan Pendaftaran**: Melihat dan mengelola data pendaftaran
+- **Admin Panel**: Filament-powered admin panel for system management
+- **Event Management**: Create, edit, and delete events
+- **Separate Image Management**: Special feature for managing event images
+- **Registration Management**: View and manage registration data
 
-## Teknologi yang Digunakan
+## Technologies Used
 
-- **Laravel 12**: Framework PHP untuk pengembangan aplikasi web
-- **Filament 3**: Panel admin untuk Laravel
-- **Tailwind CSS**: Framework CSS untuk styling
-- **MySQL**: Database relasional
+- **Laravel 12**: PHP framework for web application development
+- **Filament 3**: Admin panel for Laravel
+- **Tailwind CSS**: CSS framework for styling
+- **MySQL**: Relational database
 - **HTML/CSS/JavaScript**: Frontend
 
-## Persyaratan Sistem
+## System Requirements
 
 - PHP >= 8.2
 - Composer
 - MySQL
-- Node.js dan NPM
+- Node.js and NPM
 
-## Instalasi
+## Installation
 
-1. **Clone repositori**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/username/nicket.git
-   cd nicket
+   git clone https://github.com/nickelsync/NICKET.git
+   cd NICKET
    ```
 
-2. **Instal dependensi PHP**
+2. **Install PHP dependencies**
    ```bash
    composer install
    ```
 
-3. **Siapkan file .env**
+3. **Set up .env file**
    ```bash
    cp .env.example .env
    php artisan key:generate
    ```
 
-4. **Konfigurasi database di file .env**
+4. **Configure database in .env file**
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -64,101 +64,93 @@ NICKET adalah platform pendaftaran event yang memungkinkan pengguna untuk meliha
    DB_PASSWORD=
    ```
 
-5. **Jalankan migrasi dan seeder**
+5. **Run migrations and seeders**
    ```bash
    php artisan migrate --seed
    ```
 
-6. **Siapkan symlink storage**
+6. **Set up storage link**
    ```bash
    php artisan storage:link
    ```
 
-7. **Instal dependensi JavaScript**
+7. **Install JavaScript dependencies**
    ```bash
    npm install
    npm run dev
    ```
 
-8. **Jalankan server**
+8. **Run the server**
    ```bash
    php artisan serve
    ```
 
-9. **Akses aplikasi**
+9. **Access the application**
    - Frontend: http://localhost:8000
    - Admin panel: http://localhost:8000/admin
-   - Login admin default:
+   - Default admin credentials:
      - Email: admin@example.com
-     - Password: password
+     - Password: 12345678
 
-## Struktur Database
+## Database Structure
 
-### Tabel events
+### Events Table
 - id (primary key)
-- name (nama event)
-- event_date (tanggal event)
-- information (deskripsi event)
-- image_path (path gambar event)
+- name (event name)
+- event_date (event date)
+- information (event description)
+- image_path (event image path)
 - created_at
 - updated_at
 
-### Tabel registrations
+### Registrations Table
 - id (primary key)
-- event_id (foreign key ke tabel events)
-- name (nama peserta)
-- email (email peserta)
-- birth_date (tanggal lahir peserta)
-- address (alamat peserta)
+- event_id (foreign key to events table)
+- name (participant name)
+- email (participant email)
+- birth_date (participant birth date)
+- address (participant address)
 - created_at
 - updated_at
 
-## Fitur Khusus: Edit Gambar Terpisah
+## Special Feature: Separate Image Editing
 
-Sistem ini memiliki fitur khusus untuk mengelola gambar event secara terpisah dari form edit data event. Hal ini memungkinkan admin untuk:
+This system has a special feature for managing event images separately from the event data edit form. This allows admins to:
 
-1. Fokus pada pengelolaan gambar saja
-2. Upload gambar baru dengan interface drag-and-drop
-3. Preview gambar sebelum upload
-4. Hapus gambar event dengan mudah
+1. Focus solely on image management
+2. Upload new images with a drag-and-drop interface
+3. Preview images before uploading
+4. Easily delete event images
 
-## Penggunaan
+## Usage
 
 ### Frontend
 
-1. **Lihat Daftar Event**
-   - Kunjungi halaman utama untuk melihat semua event yang tersedia
+1. **View Event List**
+   - Visit the home page to see all available events
 
-2. **Lihat Detail Event**
-   - Klik pada event untuk melihat informasi lengkap
-   - Lihat tanggal, waktu, dan detail event lainnya
+2. **View Event Details**
+   - Click on an event to see complete information
+   - View date, time, and other event details
 
-3. **Daftar untuk Event**
-   - Klik tombol "Register Now" pada halaman detail event
-   - Isi formulir pendaftaran dengan data yang diperlukan
-   - Submit pendaftaran
+3. **Register for an Event**
+   - Click the "Register Now" button on the event detail page
+   - Fill out the registration form with required data
+   - Submit the registration
 
 ### Backend (Admin)
 
-1. **Login ke Panel Admin**
-   - Akses http://localhost:8000/admin
-   - Login dengan kredensial admin
+1. **Log in to Admin Panel**
+   - Access http://localhost:8000/admin
+   - Log in with admin credentials
 
-2. **Kelola Event**
-   - Lihat, tambah, edit, dan hapus event
-   - Kelola detail event dan gambar
+2. **Manage Events**
+   - View, add, edit, and delete events
+   - Manage event details and images
 
-3. **Edit Gambar Event**
-   - Klik "Edit Gambar" pada tabel event atau halaman detail event
-   - Upload gambar baru atau hapus gambar yang ada
+3. **Edit Event Images**
+   - Click "Edit Image" on the event table or event detail page
+   - Upload new images or delete existing ones
 
-4. **Kelola Pendaftaran**
-   - Lihat daftar peserta yang mendaftar untuk setiap event
-
-## Kontribusi
-
-Kontribusi untuk pengembangan sistem ini sangat diterima. Silakan buat pull request untuk perubahan yang diinginkan.
-
-## Lisensi
-
-[Lisensi MIT](LICENSE)
+4. **Manage Registrations**
+   - View the list of participants registered for each event
