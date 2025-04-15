@@ -1,66 +1,164 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# NICKET - Sistem Pendaftaran Event
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem pendaftaran event modern berbasis web yang dibangun dengan Laravel 12, Filament Admin Panel, dan Tailwind CSS dengan desain minimalis hitam-putih.
 
-## About Laravel
+## Deskripsi Sistem
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+NICKET adalah platform pendaftaran event yang memungkinkan pengguna untuk melihat daftar event, melihat detail event, dan mendaftar untuk event yang diminati. Platform ini dilengkapi dengan panel admin yang kuat untuk mengelola event dan pendaftaran peserta.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Frontend (User)
+- **Halaman Utama**: Menampilkan daftar event yang tersedia
+- **Halaman Detail Event**: Informasi lengkap tentang event
+- **Form Pendaftaran**: Pendaftaran peserta untuk event tertentu
+- **Tampilan Responsif**: Dapat diakses dari perangkat desktop maupun mobile
 
-## Learning Laravel
+### Backend (Admin)
+- **Panel Admin**: Panel admin dengan Filament untuk mengelola sistem
+- **Pengelolaan Event**: Membuat, mengedit, dan menghapus event
+- **Pengelolaan Gambar Terpisah**: Fitur khusus untuk mengelola gambar event
+- **Pengelolaan Pendaftaran**: Melihat dan mengelola data pendaftaran
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Teknologi yang Digunakan
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Laravel 12**: Framework PHP untuk pengembangan aplikasi web
+- **Filament 3**: Panel admin untuk Laravel
+- **Tailwind CSS**: Framework CSS untuk styling
+- **MySQL**: Database relasional
+- **HTML/CSS/JavaScript**: Frontend
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Persyaratan Sistem
 
-## Laravel Sponsors
+- PHP >= 8.2
+- Composer
+- MySQL
+- Node.js dan NPM
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Instalasi
 
-### Premium Partners
+1. **Clone repositori**
+   ```bash
+   git clone https://github.com/username/nicket.git
+   cd nicket
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. **Instal dependensi PHP**
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. **Siapkan file .env**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Konfigurasi database di file .env**
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nicket
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-## Code of Conduct
+5. **Jalankan migrasi dan seeder**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. **Siapkan symlink storage**
+   ```bash
+   php artisan storage:link
+   ```
 
-## Security Vulnerabilities
+7. **Instal dependensi JavaScript**
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+8. **Jalankan server**
+   ```bash
+   php artisan serve
+   ```
 
-## License
+9. **Akses aplikasi**
+   - Frontend: http://localhost:8000
+   - Admin panel: http://localhost:8000/admin
+   - Login admin default:
+     - Email: admin@example.com
+     - Password: password
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Struktur Database
+
+### Tabel events
+- id (primary key)
+- name (nama event)
+- event_date (tanggal event)
+- information (deskripsi event)
+- image_path (path gambar event)
+- created_at
+- updated_at
+
+### Tabel registrations
+- id (primary key)
+- event_id (foreign key ke tabel events)
+- name (nama peserta)
+- email (email peserta)
+- birth_date (tanggal lahir peserta)
+- address (alamat peserta)
+- created_at
+- updated_at
+
+## Fitur Khusus: Edit Gambar Terpisah
+
+Sistem ini memiliki fitur khusus untuk mengelola gambar event secara terpisah dari form edit data event. Hal ini memungkinkan admin untuk:
+
+1. Fokus pada pengelolaan gambar saja
+2. Upload gambar baru dengan interface drag-and-drop
+3. Preview gambar sebelum upload
+4. Hapus gambar event dengan mudah
+
+## Penggunaan
+
+### Frontend
+
+1. **Lihat Daftar Event**
+   - Kunjungi halaman utama untuk melihat semua event yang tersedia
+
+2. **Lihat Detail Event**
+   - Klik pada event untuk melihat informasi lengkap
+   - Lihat tanggal, waktu, dan detail event lainnya
+
+3. **Daftar untuk Event**
+   - Klik tombol "Register Now" pada halaman detail event
+   - Isi formulir pendaftaran dengan data yang diperlukan
+   - Submit pendaftaran
+
+### Backend (Admin)
+
+1. **Login ke Panel Admin**
+   - Akses http://localhost:8000/admin
+   - Login dengan kredensial admin
+
+2. **Kelola Event**
+   - Lihat, tambah, edit, dan hapus event
+   - Kelola detail event dan gambar
+
+3. **Edit Gambar Event**
+   - Klik "Edit Gambar" pada tabel event atau halaman detail event
+   - Upload gambar baru atau hapus gambar yang ada
+
+4. **Kelola Pendaftaran**
+   - Lihat daftar peserta yang mendaftar untuk setiap event
+
+## Kontribusi
+
+Kontribusi untuk pengembangan sistem ini sangat diterima. Silakan buat pull request untuk perubahan yang diinginkan.
+
+## Lisensi
+
+[Lisensi MIT](LICENSE)
